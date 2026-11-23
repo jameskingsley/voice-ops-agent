@@ -2,6 +2,8 @@
 
 A push-to-talk voice operations assistant built for Nigerian retail, energy, and logistics operators using Streamlit, the OpenAI Python SDK against the **Bridge** API (https://wekoya-api.wekoya.tech/v1), multi-tier Speech-to-Text (STT), tool-calling LLM reasoning, neural Text-to-Speech (TTS), and per-turn stage latency + Naira (NGN) telemetry.
 
+**Live Streamlit Demo:** [https://voice-ops-agent-rrwr8qnzca3wsgzckhg9e8.streamlit.app/](https://voice-ops-agent-rrwr8qnzca3wsgzckhg9e8.streamlit.app/)
+
 ## Architecture & Voice Pipeline
 
 1. **Push-to-Talk Capture & Fresh Multi-Turn Slots (pp.py):** Uses st.audio_input with dynamic session keys so each completed turn stays in the conversation thread while presenting a fresh recording slot for the next turn (alongside typed follow-ups and sample queries).
@@ -46,6 +48,17 @@ pip install -r requirements.txt
 Copy-Item .env.example .env
 # Set WEKOYA_API_KEY in .env
 streamlit run app.py
+Streamlit Community Cloud Secrets
+Configure these values in App settings -> Secrets:
+
+Ini, TOML
+WEKOYA_API_KEY = "your_bridge_api_key"
+WEKOYA_BASE_URL = "[https://wekoya-api.wekoya.tech/v1](https://wekoya-api.wekoya.tech/v1)"
+CHAT_MODEL = "gemini-3.8-flash"
+STT_MODEL = "whisper-1"
+TTS_MODEL = "tts-1"
+TTS_VOICE = "alloy"
+TELEMETRY_LOG_PATH = "logs/voice_telemetry.jsonl"
 To run tests:
 
 PowerShell
