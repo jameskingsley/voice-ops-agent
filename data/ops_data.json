@@ -1,0 +1,68 @@
+{
+  "orders": {
+    "ORD-4021": {
+      "order_id": "ORD-4021",
+      "customer": "Chinedu Okafor",
+      "city": "Lagos (Lekki)",
+      "sku": "SKU-PWR-100",
+      "qty": 2,
+      "total_ngn": 57000,
+      "payment_status": "paid_transfer",
+      "session_ref": "999001261121041122",
+      "fulfillment_status": "dispatched",
+      "eta": "Today before 6:00 PM WAT"
+    },
+    "ORD-4022": {
+      "order_id": "ORD-4022",
+      "customer": "Amaka Eze",
+      "city": "Enugu",
+      "sku": "SKU-INV-500",
+      "qty": 1,
+      "total_ngn": 145000,
+      "payment_status": "pending_reconciliation",
+      "session_ref": "999001261121048890",
+      "fulfillment_status": "held_payment_check",
+      "eta": "2 to 4 business days after payment clears"
+    }
+  },
+  "inventory": {
+    "SKU-PWR-100": {
+      "sku": "SKU-PWR-100",
+      "name": "20,000mAh Fast-Charge Power Bank",
+      "price_ngn": 28500,
+      "stock_qty": 34,
+      "reorder_point": 15
+    },
+    "SKU-INV-500": {
+      "sku": "SKU-INV-500",
+      "name": "500W Portable Solar Inverter",
+      "price_ngn": 145000,
+      "stock_qty": 9,
+      "reorder_point": 10
+    },
+    "SKU-PKG-012": {
+      "sku": "SKU-PKG-012",
+      "name": "Tamper-Evident Mailer Pack (100 pcs)",
+      "price_ngn": 14000,
+      "stock_qty": 6,
+      "reorder_point": 15
+    }
+  },
+  "policies": [
+    {
+      "id": "POL-001",
+      "title": "Same-Day Dispatch & Cutoff",
+      "summary": "Orders confirmed before 2:00 PM WAT qualify for same-day Lagos dispatch. Orders after 2:00 PM WAT ship next business day. Interstate deliveries take 2 to 4 business days."
+    },
+    {
+      "id": "POL-002",
+      "title": "Bank Transfer Reconciliation",
+      "summary": "Pending bank transfers older than 30 minutes require verification using the NIBSS session reference before releasing goods. Disputed transfers take up to 24 business hours."
+    },
+    {
+      "id": "POL-004",
+      "title": "Low Stock & Reorder Thresholds",
+      "summary": "Flag SKUs for restock when stock drops to or below the reorder point, and never promise instant dispatch without checking incoming stock."
+    }
+  ]
+}
